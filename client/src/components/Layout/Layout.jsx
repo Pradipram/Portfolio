@@ -3,6 +3,7 @@ import { MdOutlineKeyboardDoubleArrowRight,MdOutlineKeyboardDoubleArrowLeft } fr
 
 import "./Layout.css"
 import Home from '../../pages/Home/Home'
+import Menus from '../Menus/Menus'
 
 const Layout = () => {
     const [toggle,setToggle] = useState(false);
@@ -22,6 +23,7 @@ const Layout = () => {
                         }
                     </p>
                 </div>
+                <Menus toggle = {toggle}/>
             </div>
             <div className="container">
                 <Home/>

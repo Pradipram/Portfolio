@@ -1,5 +1,6 @@
 .sidebar-section{
     display: flex;
+    /* background-color: red; */
 }
 
 .sidebar{
@@ -21,4 +22,9 @@
 
 .sidebar-toggle-icons p svg{
     color: white;
+}
+
+.Home{
+    /* background-color: red; */
+    flex-grow: 1;
 }

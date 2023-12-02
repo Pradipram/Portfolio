@@ -1,0 +1,31 @@
+.home-container{
+    height: 300px;
+    background-color: black;
+    color: white;
+}
+
+.container{
+    padding-top: 100px;
+}
+
+.container h5{
+    color: rgb(184, 184, 112);
+}
+
+.btn-hire{
+    background-color: rgb(53, 53, 121);
+    color: rgb(209, 206, 206);
+}
+
+.btn-hire:hover{
+    background-color: rgb(16, 16, 60);
+}
+
+.btn-cv{
+    background-color: rgb(183, 207, 148);
+    margin-left: 15px;
+}
+
+.btn-cv:hover{
+    background-color: rgb(76, 93, 50);
+}

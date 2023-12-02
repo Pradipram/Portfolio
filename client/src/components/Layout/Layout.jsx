@@ -4,6 +4,8 @@ import { MdOutlineKeyboardDoubleArrowRight,MdOutlineKeyboardDoubleArrowLeft } fr
 import "./Layout.css"
 import Home from '../../pages/Home/Home'
 import Menus from '../Menus/Menus'
+import About from '../../pages/About/About'
+import Techstack from '../../pages/TechStack/Techstack'
 
 const Layout = () => {
     const [toggle,setToggle] = useState(false);
@@ -25,8 +27,10 @@ const Layout = () => {
                 </div>
                 <Menus toggle = {toggle}/>
             </div>
-            <div className="Home">
+            <div className={toggle ? "menu-item-toggle":"menu-item"}>
                 <Home/>
+                <About/>
+                <Techstack toggle = {toggle}/>
             </div>
         </div>
     </>

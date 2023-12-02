@@ -6,6 +6,7 @@ import { GoProjectRoadmap } from "react-icons/go";
 import { IoIosContact } from "react-icons/io";
 
 import "./Menus.css"
+import Profile from "../../assets/image/profile.jpeg"
 
 const Menus = ({toggle}) => {
   return (
@@ -14,7 +15,7 @@ const Menus = ({toggle}) => {
         toggle ? (
             <>
                 <div className="navbar-profile-pic">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdCy2Ci23jhbgfaoIVUPkBjWmXeo79zeg_vZDKhbBQfEOV2Hes_-Vr_a14pdmUHCX37II&usqp=CAU" alt="profile pic" />
+                    <img src={Profile} alt="profile pic" />
                  </div>
                  <div className="nav-items">
                     <div className="nav-item">

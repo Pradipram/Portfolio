@@ -11,13 +11,12 @@ const Techstack = ({toggle}) => {
             {
                 TechStackList.map(tech =>(
                     <div className={toggle? "col-md-4":"col-md-3"} key={tech.id}>
-                        <div className="card m-2">
+                        <div className="card m-2 tech-card">
                             <div className="card-content">
                                 <div className="card-body">
                                     <div className='tech-item'>
                                         <tech.icon/>
                                         <h5>{tech.name}</h5>
-
                                     </div>
                                 </div>
                             </div>

@@ -28,16 +28,16 @@ const Menus = ({toggle}) => {
                             About
                         </div>
                         <div className="nav-link">
-                            <FaCalendarCheck/>
-                            Tech Stack
-                        </div>
-                        <div className="nav-link">
                             <FaBookOpenReader/>
                             Education
                         </div>
                         <div className="nav-link">
                             <GoProjectRoadmap/>
                             Projects
+                        </div>
+                        <div className="nav-link">
+                            <FaCalendarCheck/>
+                            Tech Stack
                         </div>
                         <div className="nav-link">
                             <IoIosContact/>
@@ -62,10 +62,6 @@ const Menus = ({toggle}) => {
                             
                         </div>
                         <div className="nav-link">
-                            <FaCalendarCheck size={30} title='Tech Stack'/>
-                            
-                        </div>
-                        <div className="nav-link">
                             <FaBookOpenReader size={30} title='Education'/>
                             
                         </div>
@@ -74,8 +70,11 @@ const Menus = ({toggle}) => {
                             
                         </div>
                         <div className="nav-link">
-                            <IoIosContact size={30} title='Contact Us'/>
+                            <FaCalendarCheck size={30} title='Tech Stack'/>
                             
+                        </div>
+                        <div className="nav-link">
+                            <IoIosContact size={30} title='Contact Us'/>
                         </div>
                     </div>
                  </div>

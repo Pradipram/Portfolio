@@ -6,6 +6,7 @@
 
 .techstack h1{
     text-align: center;
+    color: rgb(22, 98, 98);
 }
 
 .tech-item{
@@ -20,7 +21,7 @@
     margin-right: 10px;
 }
 
-.card:hover{
+.tech-card:hover{
     background-color: rgb(25, 37, 5);
     color: white;
     transition: 1s;

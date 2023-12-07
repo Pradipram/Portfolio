@@ -6,6 +6,8 @@ import Home from '../../pages/Home/Home'
 import Menus from '../Menus/Menus'
 import About from '../../pages/About/About'
 import Techstack from '../../pages/TechStack/Techstack'
+import Project from '../../pages/Project/project'
+import Education from '../../pages/education/Education'
 
 const Layout = () => {
     const [toggle,setToggle] = useState(false);
@@ -30,6 +32,8 @@ const Layout = () => {
             <div className={toggle ? "menu-item-toggle":"menu-item"}>
                 <Home/>
                 <About/>
+                <Education/>
+                <Project toggle = {toggle}/>
                 <Techstack toggle = {toggle}/>
             </div>
         </div>

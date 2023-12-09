@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="container-fluid home-container">
+      <div className="container-fluid home-container" id='home'>
         <div className="container">
           <h5>
             <Typewriter

@@ -5,7 +5,7 @@ import { TechStackList } from '../../utils/techstackList'
 
 const Techstack = ({toggle}) => {
   return (
-    <div className='techstack'>
+    <div className='techstack' id='techstack'>
         <h1>Tech Stack</h1>
         <div className="row">
             {

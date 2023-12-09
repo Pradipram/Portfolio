@@ -8,6 +8,7 @@ import About from '../../pages/About/About'
 import Techstack from '../../pages/TechStack/Techstack'
 import Project from '../../pages/Project/project'
 import Education from '../../pages/education/Education'
+import Contact from '../../pages/Contact/Contact'
 
 const Layout = () => {
     const [toggle,setToggle] = useState(false);
@@ -35,6 +36,7 @@ const Layout = () => {
                 <Education/>
                 <Project toggle = {toggle}/>
                 <Techstack toggle = {toggle}/>
+                <Contact/>
             </div>
         </div>
     </>

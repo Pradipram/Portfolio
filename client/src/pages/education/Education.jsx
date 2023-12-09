@@ -7,7 +7,7 @@ import { EducationList } from '../../utils/EducationList';
 
 const Education = () => {
   return (
-    <div className="education">
+    <div className="education" id='education'>
       <h1>Education Details</h1>
       <VerticalTimeline>
       {

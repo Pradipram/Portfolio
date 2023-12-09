@@ -1,0 +1,54 @@
+.contact{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 30px;
+}
+
+.card1{
+    border-right: 1px solid rgb(194, 192, 192);
+    /* width: 400px; */
+    /* background-color: aqua; */
+}
+
+.card1 img{
+    width: 100%;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.line-div{
+    display: flex;
+    justify-content: center;
+}
+
+.line{
+    height: 1.5px;
+    width: 45%;
+    background-color: rgb(194, 192, 192);
+    margin-top: 10px;
+}
+
+.or{
+    margin: 0px 5px;
+    font-weight: bold;
+}
+
+
+.contact-form input,textarea{
+    width: 60%;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* .contact-from input:focus,textarea:focus{
+    border: 2px solid rgb(44, 44, 147);
+} */
+
+
+.contact-form input:focus,textarea:focus{
+    background-color: rgb(247, 243, 250);
+    outline: 1px solid rgb(44,44,147);
+}
+
+.button:focus{
+    background-color: rgb(36, 153, 248);
+}

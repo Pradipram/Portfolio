@@ -4,6 +4,7 @@ import { FcAbout } from "react-icons/fc";
 import { FaCalendarCheck,FaBookOpenReader } from "react-icons/fa6";
 import { GoProjectRoadmap } from "react-icons/go";
 import { IoIosContact } from "react-icons/io";
+import {Link} from 'react-scroll'
 
 import "./Menus.css"
 import Profile from "../../assets/image/profile.jpeg"
@@ -20,28 +21,40 @@ const Menus = ({toggle}) => {
                  <div className="nav-items">
                     <div className="nav-item">
                         <div className="nav-link">
-                            <FaHome/>
-                            Home
+                            <Link to='home' spy={true}>
+                                <FaHome/>
+                                Home
+                            </Link>
                         </div>
                         <div className="nav-link">
-                            <FcAbout/>
-                            About
+                            <Link to='about' spy={true} activeClass='active'>
+                                <FcAbout/>
+                                About
+                            </Link>
                         </div>
                         <div className="nav-link">
-                            <FaBookOpenReader/>
-                            Education
+                            <Link to='education' spy='true'>
+                                <FaBookOpenReader/>
+                                Education
+                            </Link>
                         </div>
                         <div className="nav-link">
-                            <GoProjectRoadmap/>
-                            Projects
+                            <Link to='project' spy='true'>
+                                <GoProjectRoadmap/>
+                                Projects
+                            </Link>
                         </div>
                         <div className="nav-link">
-                            <FaCalendarCheck/>
-                            Tech Stack
+                            <Link to='techstack' spy='true'>
+                                <FaCalendarCheck/>
+                                Tech Stack
+                            </Link>
                         </div>
                         <div className="nav-link">
-                            <IoIosContact/>
-                            Contact Us
+                            <Link to='contack' spy='true'>
+                                <IoIosContact/>
+                                Contact Us
+                            </Link>
                         </div>
                     </div>
                  </div>
@@ -49,32 +62,43 @@ const Menus = ({toggle}) => {
         ):(
            <>
                 <div className="navbar-profile-pic-small">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdCy2Ci23jhbgfaoIVUPkBjWmXeo79zeg_vZDKhbBQfEOV2Hes_-Vr_a14pdmUHCX37II&usqp=CAU" alt="profile pic" />
+                    <img src={Profile} alt="profile pic" />
                  </div>
                  <div className="nav-items">
                     <div className="nav-item">
                         <div className="nav-link">
-                            <FaHome size={30} title='Home'/>
+                            <Link to='home' spy={true}>
+                                <FaHome size={30} title='Home'/> 
+                            </Link>
+                        </div>
+                        <div className="nav-link">
+                            <Link to='about' spy={true}>
+                                <FcAbout size={30} title='About'/>
+                            </Link>
                             
                         </div>
                         <div className="nav-link">
-                            <FcAbout size={30} title='About'/>
+                            <Link to='education' spy={true}>
+                                <FaBookOpenReader size={30} title='Education'/>
+                            </Link>
                             
                         </div>
                         <div className="nav-link">
-                            <FaBookOpenReader size={30} title='Education'/>
+                            <Link to='project' spy={true}>
+                                <GoProjectRoadmap size={30} title='Projects'/>
+                            </Link>
                             
                         </div>
                         <div className="nav-link">
-                            <GoProjectRoadmap size={30} title='Projects'/>
+                            <Link to='techstack' spy={true}>
+                                <FaCalendarCheck size={30} title='Tech Stack'/>
+                            </Link>
                             
                         </div>
                         <div className="nav-link">
-                            <FaCalendarCheck size={30} title='Tech Stack'/>
-                            
-                        </div>
-                        <div className="nav-link">
-                            <IoIosContact size={30} title='Contact Us'/>
+                            <Link to='contact' spy={true}>
+                                <IoIosContact size={30} title='Contact Us'/>
+                            </Link>
                         </div>
                     </div>
                  </div>

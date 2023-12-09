@@ -8,7 +8,7 @@ import { ProjectList } from '../../utils/ProjectList';
 
 const Project = ({toggle}) => {
   return (
-    <div className="project">
+    <div className="project" id='project'>
         <h1>Projects</h1>
         <div className="row">
                 {

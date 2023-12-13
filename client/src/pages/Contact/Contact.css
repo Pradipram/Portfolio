@@ -52,3 +52,9 @@
 .button:focus{
     background-color: rgb(36, 153, 248);
 }
+
+@media (max-width:600px){
+    .contact-form input,textarea{
+        width:100%;
+    }
+}

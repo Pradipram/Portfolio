@@ -1,0 +1,44 @@
+.mobile-nav{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background-color: rgb(2, 13, 44);
+    /* background-color: red; */
+    color: white    ;
+    z-index: 1;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+}
+
+.mobile-nav-icon{
+    cursor: pointer;
+}
+
+.mobile-nav-header{
+    /* background-color: aqua; */
+    flex: 1;
+    text-align: center;
+}
+
+.mobile-menu{
+    background-color: rgb(21, 40, 55);
+    width: 150px;
+    position: fixed;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px 5px;
+    transition: 1s;
+}
+
+.mobile-menu-close{
+    display: none;
+}
+
+/* for bigger screen than mobile  */
+@media (min-width:600px){
+    .mobile-view{
+        display: none;
+    }
+}

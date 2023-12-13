@@ -51,7 +51,7 @@ const Menus = ({toggle}) => {
                             </Link>
                         </div>
                         <div className="nav-link">
-                            <Link to='contack' spy='true'>
+                            <Link to='contact' spy='true'>
                                 <IoIosContact/>
                                 Contact Us
                             </Link>

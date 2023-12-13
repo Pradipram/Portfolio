@@ -7,7 +7,7 @@
     height: 100vh;
     width: 90px;
     background-color: rgb(21, 40, 55);
-    position: fixed
+    position: fixed;
 }
 
 .sidebar-toggle{
@@ -31,4 +31,18 @@
 
 .menu-item-toggle{
     margin-left: 300px;
+}
+
+
+/* mobile view */
+@media (max-width: 600px){
+    .sidebar-section{
+        display: none;
+    }
+    .menu-item{
+        margin-left: 0px;
+    }
+    .menu-item-toggle{
+        margin-left: 0px;
+    }
 }

@@ -7,6 +7,7 @@ import axios from "axios"
 
 import './Contact.css'
 import contactUs from "../../assets/image/contactUs.png"
+import { url } from '../../assets/data';
 
 const Contact = () => {
     const [name,setName] = useState("");
@@ -27,7 +28,7 @@ const Contact = () => {
             return;
             }
             
-            const res = await axios.post("http://localhost:8000/api/v1/portfolio/sendEmail",{name,email,msg});
+            const res = await axios.post(`${url}api/v1/portfolio/sendEmail`,{name,email,msg});
             if(res.data.success){
                 toast.success(res.data.msg);
             }

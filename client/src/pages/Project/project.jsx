@@ -13,8 +13,8 @@ const Project = ({toggle}) => {
         <div className="row">
                 {
                     ProjectList.map(project =>(
-                        <div className={toggle ? "col-md-4" : "col-md-3"}>
-                            <div key={project.id} className='project-card'>
+                        <div className={toggle ? "col-md-4" : "col-md-3"} key={project.id}>
+                            <div className='project-card'>
                                 <img src={project.img_url} alt='project'/>
                                 <div className="m-auto project-badge">
                                     {

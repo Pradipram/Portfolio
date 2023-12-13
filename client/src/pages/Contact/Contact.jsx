@@ -1,12 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoSendSharp } from "react-icons/io5";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import { toast } from 'react-toastify';
+import axios from "axios"
 
 import './Contact.css'
 import contactUs from "../../assets/image/contactUs.png"
 
 const Contact = () => {
+    const [name,setName] = useState("");
+    const [email,setEmail] = useState("");
+    const [msg,setMsg] = useState("");    
+
+    const handleSubmit = async() =>{
+        try{
+            if(!name || !email || !msg){
+                toast.error("Please provide all details");
+            }
+
+            // Email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+            toast.error("Please provide a valid email address");
+            return;
+            }
+            
+            const res = await axios.post("http://localhost:8000/api/v1/portfolio/sendEmail",{name,email,msg});
+            if(res.data.success){
+                toast.success(res.data.msg);
+            }
+            else{
+                toast.error(res.data.msg);
+            }
+        }
+        catch(err){
+            toast.error("Internal server error.Please try again");
+            console.log(err);
+        }
+    }
+
   return (
     <div className="contact" id='contact'>
         <div className="card card0 border-0">
@@ -42,16 +76,16 @@ const Contact = () => {
                         </div>
                         <div className="mt-3 contact-form">
                             <div className="px-3">
-                                <input type="text" name='name' placeholder='Enter your Name' className='mb-3'/>
+                                <input type="text" name='name' placeholder='Enter your Name' className='mb-3' value={name} onChange={(e) =>setName(e.target.value)}/>   
                             </div>
                             <div className="px-3">
-                                <input type="email" name='email' placeholder='Enter your email' className='mb-3'/>
+                                <input type="email" name='email' placeholder='Enter your email' className='mb-3' value={email} onChange={(e) => setEmail(e.target.value)}/>
                             </div>
                             <div className="px-3">
-                                <textarea name="msg" id="msg" cols="30" rows="5" className='mb-3' placeholder='Enter your message'></textarea>
+                                <textarea name="msg" id="msg" cols="30" rows="5" className='mb-3' placeholder='Enter your message' value={msg} onChange={(e) => setMsg(e.target.value)}></textarea>
                             </div>
                             <div className="px-3 text-center">
-                                <button type='submit' className='btn btn-primary mb-3 button'>
+                                <button type='submit' className='btn btn-primary mb-3 button' onClick={handleSubmit}>
                                     <span>Send Message</span>
                                     <IoSendSharp className='ms-2'/>
                                 </button>

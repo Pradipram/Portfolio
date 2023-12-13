@@ -25,7 +25,8 @@
     justify-content: center;
 }
 
-@media (max-width:600px){
+@media (max-width:1024px) {
+/* @media (max-width:600px){ */
     .about{
         flex-direction: column;
     }
@@ -44,3 +45,9 @@
         margin-top: 10px;
     }
 }
+
+/* @media (min-width:600px) and (max-width:1024px){
+    .about{
+        flex-direction: column;
+    }
+} */

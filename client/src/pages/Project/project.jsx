@@ -13,7 +13,7 @@ const Project = ({toggle}) => {
         <div className="row">
                 {
                     ProjectList.map(project =>(
-                        <div className={toggle ? "col-md-4" : "col-md-3"} key={project.id}>
+                        <div className={toggle ? "col-lg-4 col-md-6" : "col-lg-3 col-md-6"} key={project.id}>
                             <div className='project-card'>
                                 <img src={project.img_url} alt='project'/>
                                 <div className="m-auto project-badge">
@@ -33,7 +33,7 @@ const Project = ({toggle}) => {
                                     </span>
                                     <span className='live-url'>
                                         <a href={project.live_url} target='_blank' rel='noreferrer'>Live Url</a>
-                                        <VscLiveShare/>
+                                        <VscLiveShare />
                                     </span>
                                 </div>
                             </div>

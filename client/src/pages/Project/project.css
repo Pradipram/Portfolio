@@ -93,3 +93,9 @@
 .live-url:hover a{
     color: rgb(19, 94, 6);
 }
+
+/* @media (min-width:600px) and (max-width:1024px){
+    .project{
+        display: none;
+    }
+} */

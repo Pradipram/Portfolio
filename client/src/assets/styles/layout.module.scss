@@ -1,0 +1,41 @@
+.sidebarSection{
+    display: flex;
+    /* background-color: red; */
+}
+
+.sidebar{
+    height: 100vh;
+    width: 90px;
+    background-color: rgb(21, 40, 55);
+    position: fixed;
+}
+
+.sidebarToggle{
+    width: 300px;
+}
+
+.sidebarToggleIcons{
+    display: flex;
+    align-items: right;
+    justify-content:right;
+    cursor: pointer;
+
+    p {
+        svg {
+            color: white;
+        }
+    }
+}
+
+/* mobile view */
+@media (max-width: 600px){
+    .sidebarSection{
+        display: none;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .sidebarToggle{
+        width: 200px;
+    }
+}

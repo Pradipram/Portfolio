@@ -1,0 +1,30 @@
+.techstack{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 30px;
+    /* background-color: red; */
+
+    h1 {
+        text-align: center;
+        color: rgb(22, 98, 98);
+
+    }
+}
+
+.techItem{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg{
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+}
+
+.techCard:hover{
+    background-color: rgb(25, 37, 5);
+    color: white;
+    transition: 1s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}

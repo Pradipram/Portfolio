@@ -3,7 +3,7 @@ import {
     MdOutlineKeyboardDoubleArrowLeft,
 } from "react-icons/md";
 
-import Menus from "../Menus/Menus";
+import { Menus } from "../Menus";
 import styles from "../../assets/styles/layout.module.scss";
 import { FC } from "react";
 

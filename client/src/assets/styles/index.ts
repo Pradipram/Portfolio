@@ -1,0 +1,1 @@
+export {default as aboutStyle} from "./about.module.scss";

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Layout from "./components/Layout/Layout";
+import { About, Home, Layout, } from "./components";
 
 import styles from "./assets/styles/app.module.scss";
-import Home from "./components/Pages/Home/Home";
+// import Home from "./components/Pages/Home/Home";
 
 function App() {
   const [toggle,setToggle] = useState(false);
@@ -12,6 +12,7 @@ function App() {
       <Layout toggle={toggle} setToggle={setToggle}/>
       <div className={toggle? styles.menuItemToggle : styles.menuItem}>
         <Home/>
+        <About/>
       </div>
     </div>
   );

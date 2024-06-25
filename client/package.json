@@ -46,8 +46,10 @@
     ]
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node-sass": "^4.11.7",
     "@types/react-scroll": "^1.8.10",
+    "@types/react-toastify": "^4.1.0",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "sass": "^1.77.6"
   }

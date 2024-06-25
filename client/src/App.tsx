@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { About, Education, Home, Layout, Project, Techstack } from "./components";
+import { About, Contact, Education, Home, Layout, Project, Techstack } from "./components";
 
 import styles from "./assets/styles/app.module.scss";
 // import Home from "./components/Pages/Home/Home";
@@ -16,6 +16,7 @@ function App() {
                 <Education />
                 <Project toggle={toggle}/>
                 <Techstack toggle={toggle}/>
+                <Contact />
             </div>
         </div>
     );

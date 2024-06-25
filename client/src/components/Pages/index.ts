@@ -3,3 +3,4 @@ export * from "./Home";
 export * from "./Education";
 export * from "./Project";
 export * from "./Techstack";
+export * from "./Contact";

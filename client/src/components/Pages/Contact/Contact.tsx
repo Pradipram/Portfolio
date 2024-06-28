@@ -34,12 +34,21 @@ const Contact = () => {
             });
             if (res.data.success) {
                 toast.success(res.data.msg);
+                setName('');
+                setEmail('');
+                setMsg('');
             } else {
                 toast.error(res.data.msg);
+                setName('');
+                setEmail('');
+                setMsg('');
             }
         } catch (err) {
             toast.error("Internal server error.Please try again");
-            console.log(err);
+            setName('');
+            setEmail('');
+            setMsg('');
+            // console.log(err);
         }
     };
 

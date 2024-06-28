@@ -15,7 +15,6 @@ dotenv.config();
 //     })
 // );
 
-// const password = "rszg gdds yweu ljpi";
 const user = process.env.USER;
 const password = process.env.PASSWORD;
 

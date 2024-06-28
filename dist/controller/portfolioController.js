@@ -14,7 +14,6 @@ const sendGridTransported_1 = require("../sendGrid/sendGridTransported");
 const sendEmailController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, email, msg } = req.body;
-        console.log("comming in backend with following properties", name, email, msg);
         //email matter
         const mailResponse = yield sendGridTransported_1.transporter.sendMail({
             to: "pradipramnawa@gmail.com",
@@ -29,7 +28,7 @@ const sendEmailController = (req, res) => __awaiter(void 0, void 0, void 0, func
                 </ul>
             `,
         });
-        console.log("mailresponse", mailResponse);
+        // console.log("mailresponse", mailResponse);
         res.status(200).send({
             success: true,
             msg: "Your Message Sent Successfully",

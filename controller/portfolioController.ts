@@ -4,12 +4,6 @@ import { transporter } from "../sendGrid/sendGridTransported";
 export const sendEmailController = async (req: Request, res: Response) => {
     try {
         const { name, email, msg } = req.body;
-        console.log(
-            "comming in backend with following properties",
-            name,
-            email,
-            msg
-        );
         //email matter
         const mailResponse = await transporter.sendMail({
             to: "pradipramnawa@gmail.com",
@@ -24,7 +18,7 @@ export const sendEmailController = async (req: Request, res: Response) => {
                 </ul>
             `,
         });
-        console.log("mailresponse", mailResponse);
+        // console.log("mailresponse", mailResponse);
         res.status(200).send({
             success: true,
             msg: "Your Message Sent Successfully",

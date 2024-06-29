@@ -1,6 +1,6 @@
 {
     "name": "new-portfolio",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "This is my portfolio",
     "main": "dist/index.js",
     "repository": "https://github.com/Pradipram/Portfolio.git",

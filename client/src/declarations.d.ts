@@ -38,3 +38,4 @@ declare module '*.pdf' {
     export default content;
   }
   
+declare module 'react-signin-page';

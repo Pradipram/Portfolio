@@ -27,27 +27,27 @@ const Contact = () => {
                 return;
             }
 
-            const res = await axios.post(`api/v1/portfolio/sendEmail`, {
+            const res = await axios.post(`/sendEmail`, {
                 name,
                 email,
                 msg,
             });
             if (res.data.success) {
                 toast.success(res.data.msg);
-                setName('');
-                setEmail('');
-                setMsg('');
+                setName("");
+                setEmail("");
+                setMsg("");
             } else {
                 toast.error(res.data.msg);
-                setName('');
-                setEmail('');
-                setMsg('');
+                setName("");
+                setEmail("");
+                setMsg("");
             }
         } catch (err) {
             toast.error("Internal server error.Please try again");
-            setName('');
-            setEmail('');
-            setMsg('');
+            setName("");
+            setEmail("");
+            setMsg("");
             // console.log(err);
         }
     };

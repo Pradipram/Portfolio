@@ -4,10 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const portfolioController_1 = require("../controller/portfolioController");
-// router object 
+const controller_1 = require("../controller");
+// import { sendEmailController } from "../controller/portfolioController";
+// router object
 const router = express_1.default.Router();
 // routes
-router.post("/sendEmail", portfolioController_1.sendEmailController);
-// export 
+router.post("/sendEmail", controller_1.sendEmailController);
+router.post("/login", controller_1.Login);
+router.post("/signup", controller_1.SingUp);
+// export
 exports.default = router;

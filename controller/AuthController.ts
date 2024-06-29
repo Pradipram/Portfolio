@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { User } from "../model";
 import bcrypt, { genSalt } from "bcryptjs";
+import jwt from "jsonwebtoken";
+import { AuthenticatedRequest } from "../globalInterface";
 
 export const SingUp = async (req: Request, res: Response) => {
     const { email, password } = req.body;
@@ -19,7 +21,7 @@ export const SingUp = async (req: Request, res: Response) => {
 
         await newUser.save();
 
-        res.status(201).json({
+        return res.status(201).json({
             message: "user created successfully",
             success: true,
         });
@@ -48,6 +50,21 @@ export const Login = async (req: Request, res: Response) => {
                 message: "Invalid Username of password",
             });
         }
+
+        const JWT_SECRET = process.env.JWT_SECRET || "";
+        // console.log("Jwt secret", JWT_SECRET);
+        const token = jwt.sign({ userId: user._id }, JWT_SECRET, {
+            expiresIn: "1h",
+        });
+
+        // console.log(token);
+
+        res.cookie("authToken", token, {
+            httpOnly: true,
+            secure: true,
+            maxAge: 3600000,
+        });
+
         return res.status(200).json({
             success: true,
             message: "successfully logged in",
@@ -55,5 +72,31 @@ export const Login = async (req: Request, res: Response) => {
         });
     } catch (err) {
         res.status(500).json({ message: "Server error", success: "false" });
+    }
+};
+
+export const getUserController = async (
+    req: AuthenticatedRequest,
+    res: Response
+) => {
+    // console.log("coming in getusercontroller");
+    const userId = req.userId;
+    // console.log("userID is : ", userId);
+    try {
+        const user = await User.findById(userId);
+        // console.log("user", user);
+        if (!user) {
+            return res
+                .status(404)
+                .json({ success: false, message: "User not found" });
+        }
+
+        return res.status(200).json({ success: true, user });
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        res.status(500).json({
+            success: false,
+            message: "Internal server error",
+        });
     }
 };

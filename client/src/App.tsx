@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     About,
     Contact,
@@ -14,15 +14,30 @@ import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./assets/styles/app.module.scss";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { getUserAPI } from "./API";
 // import Home from "./components/Pages/Home/Home";
 
 function App() {
     const [toggle, setToggle] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    const getUser = async () => {
+        const res = await getUserAPI();
+        // console.log("res in getuser", res);
+        if (res?.status === 200) {
+            setLoggedIn(true);
+        }
+    };
+
+    useEffect(() => {
+        getUser();
+    }, []);
+
     const HomeComponents = () => (
         <div>
             <Layout toggle={toggle} setToggle={setToggle} />
             <div className={toggle ? styles.menuItemToggle : styles.menuItem}>
-                <Home />
+                <Home loggedIn={loggedIn} />
                 <About />
                 <Education />
                 <Project toggle={toggle} />
@@ -37,7 +52,10 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<HomeComponents />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route
+                        path="/login"
+                        element={<Login setLoggedIn={setLoggedIn} />}
+                    />
                 </Routes>
             </Router>
             <ToastContainer />

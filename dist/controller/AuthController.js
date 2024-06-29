@@ -31,10 +31,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Login = exports.SingUp = void 0;
+exports.getUserController = exports.Login = exports.SingUp = void 0;
 const model_1 = require("../model");
 const bcryptjs_1 = __importStar(require("bcryptjs"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const SingUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { email, password } = req.body;
     console.log("email: ", email, "password: ", password);
@@ -49,7 +53,7 @@ const SingUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const hashedPassword = yield bcryptjs_1.default.hash(password, salt);
         const newUser = new model_1.User({ email, password: hashedPassword });
         yield newUser.save();
-        res.status(201).json({
+        return res.status(201).json({
             message: "user created successfully",
             success: true,
         });
@@ -79,6 +83,17 @@ const Login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 message: "Invalid Username of password",
             });
         }
+        const JWT_SECRET = process.env.JWT_SECRET || "";
+        // console.log("Jwt secret", JWT_SECRET);
+        const token = jsonwebtoken_1.default.sign({ userId: user._id }, JWT_SECRET, {
+            expiresIn: "1h",
+        });
+        // console.log(token);
+        res.cookie("authToken", token, {
+            httpOnly: true,
+            secure: true,
+            maxAge: 3600000,
+        });
         return res.status(200).json({
             success: true,
             message: "successfully logged in",
@@ -90,3 +105,26 @@ const Login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.Login = Login;
+const getUserController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // console.log("coming in getusercontroller");
+    const userId = req.userId;
+    // console.log("userID is : ", userId);
+    try {
+        const user = yield model_1.User.findById(userId);
+        // console.log("user", user);
+        if (!user) {
+            return res
+                .status(404)
+                .json({ success: false, message: "User not found" });
+        }
+        return res.status(200).json({ success: true, user });
+    }
+    catch (error) {
+        console.error("Error fetching user:", error);
+        res.status(500).json({
+            success: false,
+            message: "Internal server error",
+        });
+    }
+});
+exports.getUserController = getUserController;

@@ -18,9 +18,21 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const route_1 = __importDefault(require("./route/route"));
 const path_1 = __importDefault(require("path"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const body_parser_1 = __importDefault(require("body-parser"));
+const cors_1 = __importDefault(require("cors"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
+const corsOptions = {
+    origin: "http://localhost:3000", // Frontend URL
+    credentials: true, // Enable cookies and CORS for credentials
+};
+app.use((0, cookie_parser_1.default)());
+// app.use(requireAuth);
+// app.use(bodyParser.json({ extended: true }));
+app.use(body_parser_1.default.urlencoded({ extended: true }));
+app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.static(path_1.default.join(__dirname, "./build")));
 app.use("/", route_1.default);
 // app.get(*,function(req,res){

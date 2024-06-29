@@ -4,6 +4,15 @@
     color: white;
 }
 
+.role {
+    display: flex;
+    flex-direction: row;
+}
+
+.typewriter {
+    min-width: 270px;
+}
+
 .container {
     padding-top: 100px;
     h5 {
@@ -15,7 +24,7 @@
     background-color: rgb(53, 53, 121);
     color: rgb(209, 206, 206);
 
-    &:hover{
+    &:hover {
         background-color: rgb(16, 16, 60);
         color: white;
     }

@@ -1,23 +1,23 @@
-.sidebarSection{
+.sidebarSection {
     display: flex;
     /* background-color: red; */
 }
 
-.sidebar{
+.sidebar {
     height: 100vh;
     width: 90px;
     background-color: rgb(21, 40, 55);
     position: fixed;
 }
 
-.sidebarToggle{
+.sidebarToggle {
     width: 300px;
 }
 
-.sidebarToggleIcons{
+.sidebarToggleIcons {
     display: flex;
     align-items: right;
-    justify-content:right;
+    justify-content: right;
     cursor: pointer;
 
     p {
@@ -28,14 +28,14 @@
 }
 
 /* mobile view */
-@media (max-width: 600px){
-    .sidebarSection{
+@media (max-width: 600px) {
+    .sidebarSection {
         display: none;
     }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
-    .sidebarToggle{
+    .sidebarToggle {
         width: 200px;
     }
 }

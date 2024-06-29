@@ -1,15 +1,21 @@
-.navbarProfilePic{
-    img{
+.menus {
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbarProfilePic {
+    img {
         border-radius: 90px;
         height: 150px;
         width: 150px;
-        margin-left: 30px;
-
     }
 }
 
-.navbarProfilePicSmall{
-    img{
+.navbarProfilePicSmall {
+    img {
         border-radius: 90px;
         height: 60px;
         width: 60px;
@@ -17,21 +23,20 @@
     }
 }
 
-.navItems{
+.navItems {
     color: white;
     margin-top: 30px;
-    margin-left: 25px;
 }
 
-.navLink{
+.navLink {
     margin-top: 20px;
     cursor: pointer;
 
-    svg{
+    svg {
         margin-right: 10px;
     }
 
-    .active{
+    .active {
         text-decoration: none;
     }
 }

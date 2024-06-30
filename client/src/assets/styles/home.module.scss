@@ -1,3 +1,5 @@
+@import "./gloabal";
+
 .homeContainer {
     height: 300px;
     background-color: black;
@@ -37,4 +39,31 @@
     &:hover {
         background-color: rgb(76, 93, 50);
     }
+}
+
+.roleContainer {
+    @include flex-center;
+    flex-direction: column;
+}
+
+.roleList {
+    // background-color: red;
+    display: flex;
+    list-style-type: disc;
+    align-items: center;
+    justify-content: space-between;
+
+    .roleIndex {
+        // background-color: red;
+        margin-right: 5px;
+    }
+
+    .roleItem {
+        // display: flex;
+        @include flex-center;
+    }
+}
+
+.addrole {
+    @include flex-center;
 }

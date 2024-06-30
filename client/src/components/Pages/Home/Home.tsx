@@ -15,6 +15,8 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({ loggedIn }) => {
+    // const [role, setRole] = useState([]);
+
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);

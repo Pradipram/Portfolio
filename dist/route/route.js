@@ -14,5 +14,6 @@ router.post("/sendEmail", controller_1.sendEmailController);
 router.post("/login", controller_1.Login);
 router.post("/signup", controller_1.SingUp);
 router.get("/getuser", AuthMiddleware_1.CheckAuth, controller_1.getUserController);
+router.get("/get-role", controller_1.getRoles);
 // export
 exports.default = router;

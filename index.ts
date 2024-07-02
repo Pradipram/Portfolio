@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import adminRoutes from "./route/AdminRoute";
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, "./build")));
 
 app.use("/", router);
+app.use("/admin", adminRoutes);
 
 // app.get(*,function(req,res){
 //     res.sendFile(path.join(__dirname,"./client/public/index.html"));

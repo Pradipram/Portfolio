@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 import { FaArrowRight } from "react-icons/fa";
 import AddIcon from "@mui/icons-material/Add";
@@ -9,14 +9,19 @@ import styles from "../../../assets/styles/home.module.scss";
 import { Resume } from "../../../assets";
 import { Button, Modal } from "@mui/material";
 import AddRole from "./AddRole";
+import { getRolesAPI } from "../../../API/AdminApi/HomeApi";
 
 interface HomeProps {
     loggedIn: boolean;
 }
 
-const Home: FC<HomeProps> = ({ loggedIn }) => {
-    // const [role, setRole] = useState([]);
+interface RoleType {
+    id: string;
+    name: string;
+}
 
+const Home: FC<HomeProps> = ({ loggedIn }) => {
+    const [roles, setRoles] = useState<RoleType[]>([]);
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -35,6 +40,17 @@ const Home: FC<HomeProps> = ({ loggedIn }) => {
         window.location.href = mailtoLink;
     };
 
+    useEffect(() => {
+        const getRoles = async () => {
+            const res = await getRolesAPI();
+            // console.log("res in Home", res);
+            setRoles(res);
+            // const roleNamesArray = res.map((role: RoleType) => role.name);
+            // console.log(roleNamesArray);
+        };
+        getRoles();
+    }, []);
+
     return (
         <>
             <div
@@ -46,10 +62,9 @@ const Home: FC<HomeProps> = ({ loggedIn }) => {
                         <h5 className={styles.typewriter}>
                             <Typewriter
                                 options={{
-                                    strings: [
-                                        "Software Developer",
-                                        "Full Stack Web Developer",
-                                    ],
+                                    strings: roles.map(
+                                        (role: RoleType) => role.name
+                                    ),
                                     autoStart: true,
                                     loop: true,
                                 }}
@@ -70,7 +85,10 @@ const Home: FC<HomeProps> = ({ loggedIn }) => {
                                     aria-labelledby="modal-modal-title"
                                     aria-describedby="modal-modal-description"
                                 >
-                                    <AddRole />
+                                    <AddRole
+                                        roles={roles}
+                                        setRoles={setRoles}
+                                    />
                                 </Modal>
                             </>
                         )}

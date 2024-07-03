@@ -10,4 +10,6 @@ const adminRoutes = express_1.default.Router();
 adminRoutes.post("/add-role", AuthMiddleware_1.CheckAuth, controller_1.AddRoleController);
 adminRoutes.delete("/delete-role/:id", AuthMiddleware_1.CheckAuth, controller_1.deleteRole);
 adminRoutes.put("/update-role", AuthMiddleware_1.CheckAuth, controller_1.updateRole);
+adminRoutes.post("/upload", AuthMiddleware_1.CheckAuth, controller_1.uploadResume);
+adminRoutes.get("/get-resume", controller_1.getResume);
 exports.default = adminRoutes;

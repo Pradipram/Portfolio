@@ -61,3 +61,33 @@ export const UpdateRoleApi = async (id: string, name: string) => {
         throw new Error("Failed to update role");
     }
 };
+
+export const uploadResumeApi = async (resume: string) => {
+    try {
+        const res = await axios.post(
+            "/admin/upload",
+            { resume },
+            {
+                withCredentials: true,
+            }
+        );
+        return res;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+export const getResumeApi = async () => {
+    try {
+        const res = await axios.get("/admin/get-resume", {
+            withCredentials: true,
+        });
+        if (res.status === 200) {
+            return res.data.resume;
+        } else {
+            throw "internal server error";
+        }
+    } catch (err) {
+        console.log(err);
+    }
+};

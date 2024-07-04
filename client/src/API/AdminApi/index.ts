@@ -1,3 +1,2 @@
-import { AddRoleApi } from "./HomeApi";
-
-export { AddRoleApi };
+export * from "./HomeApi";
+export * from "./AboutApi";

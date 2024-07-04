@@ -38,7 +38,7 @@ function App() {
             <Layout toggle={toggle} setToggle={setToggle} />
             <div className={toggle ? styles.menuItemToggle : styles.menuItem}>
                 <Home loggedIn={loggedIn} />
-                <About />
+                <About loggedIn={loggedIn} />
                 <Education />
                 <Project toggle={toggle} />
                 <Techstack toggle={toggle} />

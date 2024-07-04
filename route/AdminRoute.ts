@@ -4,6 +4,7 @@ import {
     AddRoleController,
     deleteRole,
     getResume,
+    updateAbout,
     updateRole,
     uploadResume,
 } from "../controller";
@@ -14,4 +15,5 @@ adminRoutes.delete("/delete-role/:id", CheckAuth, deleteRole);
 adminRoutes.put("/update-role", CheckAuth, updateRole);
 adminRoutes.post("/upload", CheckAuth, uploadResume);
 adminRoutes.get("/get-resume", getResume);
+adminRoutes.post("/update-about", CheckAuth, updateAbout);
 export default adminRoutes;

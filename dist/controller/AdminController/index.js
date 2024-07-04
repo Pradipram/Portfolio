@@ -16,3 +16,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // export * from "./fileUploadController";
 __exportStar(require("./roleController"), exports);
+__exportStar(require("./aboutController"), exports);

@@ -5,6 +5,7 @@ const dataPath = path.join(__dirname, "../data/data.json");
 
 interface Data {
     resume: string;
+    about: string;
 }
 
 // Read data from data.json

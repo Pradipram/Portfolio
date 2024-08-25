@@ -1,11 +1,12 @@
 import express from "express";
 import {
-    getAbout,
-    getRoles,
-    getUserController,
-    Login,
-    sendEmailController,
-    SingUp,
+  getAbout,
+  getEducation,
+  getRoles,
+  getUserController,
+  Login,
+  sendEmailController,
+  SingUp,
 } from "../controller";
 import { CheckAuth } from "../middleware/AuthMiddleware";
 // import { sendEmailController } from "../controller/portfolioController";
@@ -21,6 +22,6 @@ router.get("/getuser", CheckAuth, getUserController);
 
 router.get("/get-role", getRoles);
 router.get("/get-about", getAbout);
-
+router.get("/get-education", getEducation);
 // export
 export default router;

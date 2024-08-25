@@ -16,5 +16,6 @@ router.post("/signup", controller_1.SingUp);
 router.get("/getuser", AuthMiddleware_1.CheckAuth, controller_1.getUserController);
 router.get("/get-role", controller_1.getRoles);
 router.get("/get-about", controller_1.getAbout);
+router.get("/get-education", controller_1.getEducation);
 // export
 exports.default = router;

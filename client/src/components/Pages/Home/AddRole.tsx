@@ -66,7 +66,7 @@ const AddRole = React.forwardRef<HTMLDivElement, AddRoleProps>(
                         setRoleName("");
                         toast.success("Role added successfully");
                     } else {
-                        throw "Internal server error";
+                        throw new Error("Internal server error");
                     }
                 } catch (err) {
                     toast.error(
@@ -88,7 +88,7 @@ const AddRole = React.forwardRef<HTMLDivElement, AddRoleProps>(
                     );
                     toast.success("Role deleted successfully");
                 } else {
-                    throw "Internal server error";
+                    throw new Error("Internal server error");
                 }
             } catch (err) {
                 toast.error("Error deleting role. Try refreshing the page");
@@ -109,7 +109,7 @@ const AddRole = React.forwardRef<HTMLDivElement, AddRoleProps>(
                     setEditMode(null);
                     toast.success("Role updated successfully");
                 } else {
-                    throw "Internal server error";
+                    throw new Error("Internal server error");
                 }
             } catch (err) {
                 toast.error("Failed to update role");

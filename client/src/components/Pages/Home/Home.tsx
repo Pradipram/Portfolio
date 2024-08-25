@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 import { FaArrowRight } from "react-icons/fa";
 import AddIcon from "@mui/icons-material/Add";
@@ -28,7 +28,7 @@ interface RoleType {
 
 const Home: FC<HomeProps> = ({ loggedIn }) => {
     const [roles, setRoles] = useState<RoleType[]>([]);
-    const fileInputRef = useRef<HTMLInputElement | null>(null);
+    // const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [resume, setResume] = useState("");
     const [takingurl, setTakingUrl] = useState(false);
 
@@ -75,7 +75,7 @@ const Home: FC<HomeProps> = ({ loggedIn }) => {
             return;
         }
         try {
-            const res = await uploadResumeApi(resume);
+            await uploadResumeApi(resume);
             // console.log(res);
             setResume(resume);
             toast.success("Resume updated successfully");
@@ -85,9 +85,9 @@ const Home: FC<HomeProps> = ({ loggedIn }) => {
         }
     };
 
-    const handleButtonClick = () => {
-        fileInputRef.current?.click();
-    };
+    // const handleButtonClick = () => {
+    //     fileInputRef.current?.click();
+    // };
 
     return (
         <>

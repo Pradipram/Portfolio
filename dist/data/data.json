@@ -1,4 +1,29 @@
 {
   "resume": "https://drive.google.com/file/d/1Nya7LNlkAHa4zqyi25sxWKwKbKeL37FB/view?usp=sharing",
-  "about": "I'm a prefinal year student at IIT(ISM) Dhanbad pursuing a Bachelor of Technology in computer science and engineering. I am interested in data structure, algorithms, and web development."
+  "about": "I'm a prefinal year student at IIT(ISM) Dhanbad pursuing a Bachelor of Technology in computer science and engineering. I am interested in data structure, algorithms, and web development.",
+  "education": [
+    {
+      "stream": "Bachelor of Technology",
+      "major": "Computer Science and Engineering",
+      "school": "IIT(ISM) Dhanbad",
+      "location": "Jharkhand, India",
+      "date": "Dec 2021 - May 2025",
+      "icon": "FaUniversity"
+    },
+    {
+      "stream": "XII",
+      "major": "PCM",
+      "school": "Jawahar Navodaya Vidyalaya Bundi",
+      "location": "Rajasthan, India",
+      "date": "Apr 2020 - May 2021",
+      "icon": "LuSchool"
+    },
+    {
+      "stream": "X",
+      "school": "Jawahar Navodaya Vidyalaya Chatra",
+      "location": "Jharkhand,India",
+      "date": "Apr 2018 - Apr 2019",
+      "icon": "LuSchool"
+    }
+  ]
 }

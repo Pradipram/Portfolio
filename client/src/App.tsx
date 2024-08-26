@@ -42,7 +42,7 @@ function App() {
         <About loggedIn={loggedIn} />
         <Education />
         <Project toggle={toggle} loggedIn={loggedIn} />
-        <Techstack toggle={toggle} />
+        <Techstack toggle={toggle} loggedIn={loggedIn} />
         <Contact />
       </div>
     </div>

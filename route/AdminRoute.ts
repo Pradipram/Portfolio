@@ -1,12 +1,13 @@
 import express from "express";
 import { CheckAuth } from "../middleware/AuthMiddleware";
 import {
-    AddRoleController,
-    deleteRole,
-    getResume,
-    updateAbout,
-    updateRole,
-    uploadResume,
+  AddProject,
+  AddRoleController,
+  deleteRole,
+  getResume,
+  updateAbout,
+  updateRole,
+  uploadResume,
 } from "../controller";
 const adminRoutes = express.Router();
 
@@ -16,4 +17,6 @@ adminRoutes.put("/update-role", CheckAuth, updateRole);
 adminRoutes.post("/upload", CheckAuth, uploadResume);
 adminRoutes.get("/get-resume", getResume);
 adminRoutes.post("/update-about", CheckAuth, updateAbout);
+
+adminRoutes.post("/add-project", CheckAuth, AddProject);
 export default adminRoutes;

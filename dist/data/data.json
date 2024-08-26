@@ -25,5 +25,33 @@
       "date": "Apr 2018 - Apr 2019",
       "icon": "LuSchool"
     }
+  ],
+  "project": [
+    {
+      "name": "EliteBazzar",
+      "img_url": "https://github.com/user-attachments/assets/064195c4-d2db-481c-abdc-11a4ca50fe85",
+      "techStack": [
+        "ReactJs",
+        "ExpressJs",
+        "NodeJs",
+        "MongoDB"
+      ],
+      "github": "https://github.com/Pradipram/EliteBazzar",
+      "live_url": "https://elitebazzar.onrender.com/",
+      "id": "Siwfadyx"
+    },
+    {
+      "name": "Write-Stream",
+      "img_url": "https://github.com/user-attachments/assets/ff16057d-03a5-44ed-a1dc-fe76a491fc78",
+      "techStack": [
+        "ReactJs",
+        "ExpressJs",
+        "NodeJs",
+        "MongoDB"
+      ],
+      "github": "https://github.com/Pradipram/BlogApp-writeStream",
+      "live_url": "https://write-stream.onrender.com/",
+      "id": "poBXZqV3"
+    }
   ]
 }

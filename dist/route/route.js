@@ -17,5 +17,6 @@ router.get("/getuser", AuthMiddleware_1.CheckAuth, controller_1.getUserControlle
 router.get("/get-role", controller_1.getRoles);
 router.get("/get-about", controller_1.getAbout);
 router.get("/get-education", controller_1.getEducation);
+router.get("/get-project", controller_1.getProject);
 // export
 exports.default = router;

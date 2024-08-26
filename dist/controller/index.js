@@ -18,3 +18,4 @@ __exportStar(require("./AuthController"), exports);
 __exportStar(require("./portfolioController"), exports);
 __exportStar(require("./AdminController"), exports);
 __exportStar(require("./educationController"), exports);
+__exportStar(require("./ProjectController"), exports);

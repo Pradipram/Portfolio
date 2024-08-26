@@ -13,4 +13,5 @@ adminRoutes.put("/update-role", AuthMiddleware_1.CheckAuth, controller_1.updateR
 adminRoutes.post("/upload", AuthMiddleware_1.CheckAuth, controller_1.uploadResume);
 adminRoutes.get("/get-resume", controller_1.getResume);
 adminRoutes.post("/update-about", AuthMiddleware_1.CheckAuth, controller_1.updateAbout);
+adminRoutes.post("/add-project", AuthMiddleware_1.CheckAuth, controller_1.AddProject);
 exports.default = adminRoutes;

@@ -12,10 +12,20 @@ interface Education {
   icon: string;
 }
 
+interface Project {
+  id: number;
+  name: string;
+  img_url: string;
+  techStack: string[];
+  github: string;
+  live_url: string;
+}
+
 interface Data {
   resume: string;
   about: string;
   education: Education[];
+  project: Project[];
 }
 
 // Read data from data.json

@@ -28,7 +28,8 @@
     "start": "node dist/index.js",
     "frontend": "cd client && yarn start",
     "backend": "concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
-    "dev": "concurrently \"yarn backend\" \"yarn frontend\""
+    "dev": "concurrently \"yarn backend\" \"yarn frontend\"",
+    "build:frontend": "cd client && yarn build"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

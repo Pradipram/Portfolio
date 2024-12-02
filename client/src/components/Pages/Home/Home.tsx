@@ -36,19 +36,19 @@ const Home: FC<HomeProps> = ({ loggedIn }) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const handleHireMeClick = () => {
-        const email = "pradipramnawa@gmail.com";
-        const subject = "Job Opportunity"; // You can customize the subject
-        const body =
-            "Hello,\n\nI'm interested in discussing job opportunities with you.";
+    // const handleHireMeClick = () => {
+    //     const email = "pradipramnawa@gmail.com";
+    //     const subject = "Job Opportunity"; // You can customize the subject
+    //     const body =
+    //         "Hello,\n\nI'm interested in discussing job opportunities with you.";
 
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
+    //     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+    //         subject
+    //     )}&body=${encodeURIComponent(body)}`;
 
-        // Open the email client
-        window.location.href = mailtoLink;
-    };
+    //     // Open the email client
+    //     window.location.href = mailtoLink;
+    // };
     const getRoles = async () => {
         const res = await getRolesAPI();
         setRoles(res);
@@ -133,13 +133,13 @@ const Home: FC<HomeProps> = ({ loggedIn }) => {
                     </div>
                     <h1>I am Pradip Ram</h1>
                     <div className="Home-button">
-                        <button
+                        {/* <button
                             className={`btn ${styles.btnHire}`}
                             onClick={handleHireMeClick}
                         >
                             Hire Me
                             <FaArrowRight style={{ marginLeft: "10px" }} />
-                        </button>
+                        </button> */}
                         <a
                             className={`btn ${styles.btnCv}`}
                             href={resume}
